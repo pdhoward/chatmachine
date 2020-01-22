@@ -35,8 +35,9 @@ export default {
         return {
             user: '',
             message: '',
+            netId: 'g0002',
             messages: [],
-            socket : io('localhost:3100')
+            socket : io('localhost:3100', { query: "netId=g0002" })
         }
     },
     methods: {
@@ -45,6 +46,7 @@ export default {
             
             this.socket.emit('SEND_MESSAGE', {
                 user: this.user,
+                netId: this.netId,
                 message: this.message
             });
             this.message = ''
