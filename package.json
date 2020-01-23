@@ -4,16 +4,25 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server/index.js",
+    "start:dev": "concurrently \"nodemon server/index.js --ignore 'src/*'\" \"npm run client\"",
+    "client": "vue-cli-service serve",
+    "install": "cd server && npm install",
+    "heroku-postbuild": "cd client && npm run build"
   },
   "dependencies": {
+    "if-env": "^1.0.4",
     "socket.io-client": "^2.1.0",
     "vue": "^2.5.13"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.6",
     "@vue/cli-service": "^3.0.0-beta.6",
-    "vue-template-compiler": "^2.5.13"
+    "vue-template-compiler": "^2.5.13",
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
   },
   "browserslist": [
     "> 1%",
