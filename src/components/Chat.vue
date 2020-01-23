@@ -35,16 +35,16 @@ export default {
         return {
             user: '',
             message: '',
-            netId: 'g0002',
+            netId: 'rest001',
             messages: [],
-            socket : io('localhost:3100', { query: "netId=g0002" })
+            socket : io('localhost:3100', { query: "netId=rest001" })
         }
     },
     methods: {
         sendMessage(e) {
             e.preventDefault();
             
-            this.socket.emit('SEND_MESSAGE', {
+            this.socket.emit('MESSAGE', {
                 user: this.user,
                 netId: this.netId,
                 message: this.message
@@ -53,7 +53,7 @@ export default {
         }
     },
     mounted() {
-        this.socket.on('MESSAGE', (data) => {
+        this.socket.on('RESPONSE', (data) => {
             this.messages = [...this.messages, data];
             // you can also do this.messages.push(data)
         });
