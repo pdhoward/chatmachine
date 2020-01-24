@@ -21,6 +21,10 @@
                   <label for="message">Message:</label>
                   <input type="text" v-model="message" class="form-control">
               </div>
+               <div class="gorm-group pb-3">
+                  <label for="action">Action:</label>
+                  <input type="text" v-model="action" class="form-control">
+              </div>
               <button type="submit" class="btn btn-success">Send</button>
           </form>
       </div>
@@ -35,6 +39,7 @@ export default {
         return {
             user: '',
             message: '',
+            action: '',
             netId: 'rest001',
             messages: [],
             socket : io('localhost:3100', { query: "netId=rest001" })
@@ -47,9 +52,11 @@ export default {
             this.socket.emit('MESSAGE', {
                 user: this.user,
                 netId: this.netId,
-                message: this.message
+                message: this.message,
+                action: this.action
             });
             this.message = ''
+            this.action = ''
         }
     },
     mounted() {
