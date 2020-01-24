@@ -22,7 +22,7 @@
                   <input type="text" v-model="message" class="form-control">
               </div>
                <div class="gorm-group pb-3">
-                  <label for="action">Action:</label>
+                  <label for="action">Select an Action:</label>
                   <input type="text" v-model="action" class="form-control">
               </div>
               <button type="submit" class="btn btn-success">Send</button>
