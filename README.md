@@ -14,12 +14,7 @@ Note - the vue client can be used independently of the server for real-time test
 ### References
 https://www.freecodecamp.org/news/an-introduction-to-dynamic-list-rendering-in-vue-js-a70eea3e321/
 
-https://blog.bitsrc.io/how-to-build-vue-components-like-a-pro-fd89fd4d524d
-
-https://www.storyblok.com/tp/vue-dynamic-component-from-json
+https://rangle.io/blog/how-to-create-data-driven-user-interfaces-in-vue/
 
 https://medium.com/html-all-the-things/hatt-vue-js-2-9b34557f0305
-
-
-
 

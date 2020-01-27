@@ -62,6 +62,7 @@ export default {
     mounted() {
         this.socket.on('RESPONSE', (data) => {
             this.messages = [...this.messages, data];
+            console.log(data)
             // you can also do this.messages.push(data)
         });
     }
