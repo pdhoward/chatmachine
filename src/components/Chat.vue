@@ -7,7 +7,7 @@
           </div>
           <div class="card-body">
               <div class="messages" v-for="(msg, index) in messages" :key="index">
-                  <p><span class="font-weight-bold">{{ msg.user }}: </span>{{ msg.message }}</p>
+                  <p><span class="font-weight-bold">'machine': </span>{{msg}}</p>
               </div>
           </div>
       </div>
@@ -61,7 +61,7 @@ export default {
     },
     mounted() {
         this.socket.on('RESPONSE', (data) => {
-            this.messages = [...this.messages, data];
+            this.messages = [...this.messages, ...data.reply];
             console.log(data)
             // you can also do this.messages.push(data)
         });
