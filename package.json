@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.6",
-    "@vue/cli-service": "^3.0.0-beta.6",
+    "@vue/cli-service": "^5.0.8",
     "vue-template-compiler": "^2.5.13",
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.7"
